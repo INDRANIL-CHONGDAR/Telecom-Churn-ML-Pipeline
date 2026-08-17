@@ -6,7 +6,10 @@ This week is planning-only — no model has been trained yet. That happens in la
 ## What's here
 
 - `docs/` — the Week 1 project plan (Word doc): problem statement, timeline, risk register, ROI illustration, DPDP Act compliance notes.
-- `data/` — the IBM Telco Customer Churn dataset (7,043 records, 21 attributes) used for the exploratory charts.
+- `data/` — https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+            the IBM Telco Customer Churn dataset (7,043 records, 21 attributes) used for the exploratory charts.
+  ** The project uses the Telco Customer Churn dataset originally provided as an IBM Sample Dataset and obtained through Kaggle.
+  The raw CSV file is not redistributed in this repository. Please obtain the dataset from the original Kaggle source: **
 - `scripts/make_charts.py` — regenerates the six exploratory charts in `outputs/` from `data/`.
 - `scripts/build.js` — regenerates `docs/Telecom_Churn_ML_Pipeline_Project_Plan.docx` from scratch (Node.js, uses the `docx` npm package).
 - `outputs/` — the six charts referenced in the project plan (churn distribution, churn by contract, churn by service, tenure vs. charges, timeline, planned model benchmarks).
