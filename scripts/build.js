@@ -32,14 +32,14 @@ const CONTENT_W = 9360; // 6.5in usable width in twips (with 1in margins)
 
 // ---------- helpers ----------
 const COLORS = {
-  navy: "1E293B",
-  cyan: "0891B2",
-  indigo: "4F46E5",
+  navy: "17565F",
+  cyan: "17565F",
+  indigo: "17565F",
   emerald: "059669",
   rose: "E11D48",
   amber: "D97706",
   lightgrey: "F1F5F9",
-  midgrey: "64748B",
+  midgrey: "42696E",
   white: "FFFFFF",
 };
 
@@ -48,41 +48,41 @@ function h1(text) {
     heading: HeadingLevel.HEADING_1,
     spacing: { before: 360, after: 200 },
     border: { bottom: { color: COLORS.cyan, space: 4, style: BorderStyle.SINGLE, size: 12 } },
-    children: [new TextRun({ text, bold: true, color: COLORS.navy, size: 30 })],
+    children: [new TextRun({ text, bold: true, color: COLORS.navy, size: 30, smallCaps: true })],
   });
 }
 function h2(text) {
   return new Paragraph({
     heading: HeadingLevel.HEADING_2,
     spacing: { before: 260, after: 140 },
-    children: [new TextRun({ text, bold: true, color: COLORS.cyan, size: 24 })],
+    children: [new TextRun({ text, bold: true, color: COLORS.cyan, size: 24, smallCaps: true })],
   });
 }
 function h3(text) {
   return new Paragraph({
     heading: HeadingLevel.HEADING_3,
     spacing: { before: 180, after: 100 },
-    children: [new TextRun({ text, bold: true, color: COLORS.indigo, size: 21 })],
+    children: [new TextRun({ text, bold: true, color: COLORS.indigo, size: 21, smallCaps: true })],
   });
 }
 function body(text, opts = {}) {
   return new Paragraph({
     spacing: { after: 160, line: 300 },
-    children: [new TextRun({ text, size: 22, color: "1E293B", ...opts })],
+    children: [new TextRun({ text, size: 22, color: COLORS.midgrey, smallCaps: true, ...opts })],
   });
 }
 function bullet(text, level = 0) {
   return new Paragraph({
     numbering: { reference: "bullet-list", level },
     spacing: { after: 80 },
-    children: [new TextRun({ text, size: 22 })],
+    children: [new TextRun({ text, size: 22, color: COLORS.midgrey, smallCaps: true })],
   });
 }
 function numbered(text, level = 0) {
   return new Paragraph({
     numbering: { reference: "num-list", level },
     spacing: { after: 80 },
-    children: [new TextRun({ text, size: 22 })],
+    children: [new TextRun({ text, size: 22, color: COLORS.midgrey, smallCaps: true })],
   });
 }
 function caption(text) {
@@ -161,22 +161,22 @@ const doc = new Document({
       properties: { page: { size: { width: W, height: H }, margin: { top: 1440, bottom: 1440, left: 1440, right: 1440 } } },
       children: [
         new Paragraph({ spacing: { before: 1600 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "PROJECT PLANNING & STRATEGY REPORT", bold: true, size: 26, color: COLORS.cyan })] }),
+          children: [new TextRun({ text: "PROJECT PLANNING & STRATEGY REPORT", bold: true, size: 26, color: COLORS.cyan, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 300 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Proactive Customer Retention via an End-to-End", bold: true, size: 44, color: COLORS.navy })] }),
+          children: [new TextRun({ text: "Proactive Customer Retention via an End-to-End", bold: true, size: 44, color: COLORS.navy, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 100 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Machine Learning Churn Prediction Pipeline", bold: true, size: 44, color: COLORS.navy })] }),
+          children: [new TextRun({ text: "Machine Learning Churn Prediction Pipeline", bold: true, size: 44, color: COLORS.navy, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 400 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "A Strategic Roadmap for Telecommunications Churn Risk Mitigation", italics: true, size: 24, color: COLORS.midgrey })] }),
+          children: [new TextRun({ text: "A Strategic Roadmap for Telecommunications Churn Risk Mitigation", italics: true, size: 24, color: COLORS.midgrey, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 900 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Week 1 Deliverable — Project Planning and Strategy for ML Pipeline", size: 22, color: COLORS.indigo, bold: true })] }),
+          children: [new TextRun({ text: "Week 1 Deliverable — Project Planning and Strategy for ML Pipeline", size: 22, color: COLORS.indigo, bold: true, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 1400 }, alignment: AlignmentType.CENTER,
           border: { top: { color: "CBD5E1", space: 10, style: BorderStyle.SINGLE, size: 6 } },
-          children: [new TextRun({ text: "Dataset: Telco Customer Churn (IBM Sample Dataset) — 7,043 records, 21 attributes", size: 20, color: COLORS.midgrey })] }),
+          children: [new TextRun({ text: "Dataset: Telco Customer Churn (IBM Sample Dataset) — 7,043 records, 21 attributes", size: 20, color: COLORS.midgrey, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 100 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Regulatory frame of reference: Digital Personal Data Protection (DPDP) Act, 2023", size: 20, color: COLORS.midgrey })] }),
+          children: [new TextRun({ text: "Regulatory frame of reference: Digital Personal Data Protection (DPDP) Act, 2023", size: 20, color: COLORS.midgrey, smallCaps: true })] }),
         new Paragraph({ spacing: { before: 100 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Prepared by: Haddy", size: 20, color: COLORS.midgrey })] }),
+          children: [new TextRun({ text: "Prepared by: Indranil Chongdar", size: 20, color: COLORS.midgrey, smallCaps: true })] }),
       ],
     },
     // ===================== TOC PAGE =====================
